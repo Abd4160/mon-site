@@ -1,0 +1,86 @@
+/* Réinitialisation des marges et paddings */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Style de base */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+    display: grid;
+    grid-template-areas:
+        "header header"
+        "menu content"
+        "footer footer";
+    grid-template-rows: auto 1fr auto;
+    grid-template-columns: 200px 1fr;
+    min-height: 100vh;  /* Force le pied de page à être en bas si le contenu est court */
+}
+
+header {
+    grid-area: header;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1rem;
+}
+
+nav.menu {
+    grid-area: menu;
+    background-color: #444;
+    padding: 1rem;
+}
+
+nav.menu ul {
+    list-style-type: none;
+}
+
+nav.menu li {
+    margin: 1rem 0;
+}
+
+nav.menu a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.content {
+    grid-area: content;
+    padding: 2rem;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Augmenter la taille des cartes */
+.cards img {
+    width: 250px; /* Taille augmentée */
+    height: 300px; /* Taille augmentée */
+    object-fit: cover; /* Garder l'image proportionnelle */
+    border-radius: 8px;
+}
+
+footer {
+    grid-area: footer;
+    background-color: #333;
+    text-align: center;
+    padding: 1rem;
+    color: #fff;
+}
+@media (max-width: 768px) {
+    .menu {
+        padding: 1rem;
+        font-size: 1rem;
+    }
+    .cards img {
+        width: 200px;
+        height: 250px;
+    }
+}
